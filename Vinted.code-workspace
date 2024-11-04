@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../../jour-6/jour-06/correction-vinted-02"
+	}
+],
+  "settings": {
+    "explorer.excludeGitIgnore": false
+  }
+}
