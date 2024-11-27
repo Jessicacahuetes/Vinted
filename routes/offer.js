@@ -200,4 +200,21 @@ router.put("/offers/:id", isAuthenticated, async (req, res) => {
   }
 });
 
+router.delete("/offers/:id", isAuthenticated, async (req, res) => {
+  try {
+    await cloudinary.api.delete_resources_by_prefix(
+      `api/vinted-v2/offers/${req.params.id}`
+    );
+    //on  supprime dans cloudinary
+    await cloudinary.api.delete_folder(`api/vinted-v2/offers/${req.params.id}`);
+    // on cherche l'offre dans MongoDB
+    offerToDelete = await Offer.findById(req.params.id);
+    //et on la supprime
+    await offerToDelete.delete();
+    res.status(200).json("Offer deleted succesfully !");
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 module.exports = router;
