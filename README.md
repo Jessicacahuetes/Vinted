@@ -1,4 +1,4 @@
-# Vinted
+# vinted-backend
 
 Exercice back-end // réplique de l'API Vinted
 
@@ -29,4 +29,3 @@ Créer une nouvelle annonce
 ### offer/update/:id
 
 mettre à jour une annonce existante, rajoute d'autres photos,
-# vinted-backend
